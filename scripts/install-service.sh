@@ -16,6 +16,9 @@ systemctl --user daemon-reload
 systemctl --user enable "$SERVICE"
 systemctl --user start "$SERVICE"
 
+# Ensure service survives reboot (not just login)
+loginctl enable-linger
+
 echo ""
 echo "Done. The bot will auto-start on login and restart if it crashes."
 echo ""
