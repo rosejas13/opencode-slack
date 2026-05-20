@@ -1,0 +1,20 @@
+[Unit]
+Description=opencode-slack bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=rosejas
+WorkingDirectory=/home/rosejas/Projects/opencode-slack
+ExecStart=/home/rosejas/Projects/opencode-slack/node_modules/.bin/tsx src/app.ts
+Restart=always
+RestartSec=10
+Environment=SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+Environment=SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+Environment=ALLOWED_USER_ID=${ALLOWED_USER_ID}
+Environment=OPENCODE_PATH=/home/rosejas/.opencode/bin/opencode
+Environment=OPENCODE_WORKDIR=/home/rosejas/Projects
+
+[Install]
+WantedBy=default.target

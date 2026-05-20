@@ -1,0 +1,40 @@
+{
+  "display_information": {
+    "name": "opencode",
+    "description": "Interact with opencode — your AI coding agent — from Slack. DM or @mention to run tasks, review code, or ask questions.",
+    "background_color": "#1a1a2e",
+    "long_description": "DM or @mention this bot to invoke opencode on your development machine. opencode processes your request and returns the response in-thread. Supports code generation, debugging, code review, refactoring, and more."
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "opencode",
+      "always_online": false
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "chat:write",
+        "im:history",
+        "im:read",
+        "im:write",
+        "reactions:write"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention",
+        "message.im"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}
