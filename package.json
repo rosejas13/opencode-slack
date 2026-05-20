@@ -1,0 +1,29 @@
+{
+  "name": "opencode-slack",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Slack bot integration for opencode — interact with your coding agent from anywhere via Slack.",
+  "type": "module",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "start": "node --loader ts-node/esm src/app.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "format": "prettier --write 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.7.2",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.3",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.30.0"
+  }
+}
